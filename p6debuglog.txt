@@ -1,0 +1,59 @@
+gcc -g p6final.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x912: file p6final.c, line 59.
+(gdb) r
+Starting program: /home/runner/IA1-Revision-1/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p6final.c:59
+59  {
+(gdb) n
+62    input_two_strings(a,b);
+(gdb) n
+Enter the word: hello
+Enter the word: world
+63    result = cmp(a,b);
+(gdb) s
+cmp (a=0x7ffe5d45b970 "hello", b=0x7ffe5d45b990 "world") at p6final.c:11
+11    int i=0,result;
+(gdb) s
+12    while(a[i] !='\0'&& b[i] !='\0')
+(gdb) s
+14      if(a[i]>b[i])
+(gdb) s
+19  else if(b[i]>a[i])
+(gdb) s
+21    result = 1;
+(gdb) s
+22    break;
+(gdb) s
+29  if(a[i]=='\0')
+(gdb) s
+33    else if(b[i]=='\0')
+(gdb) s
+37  if(a[i]=='\0'&& b[i]=='\0')
+(gdb) s
+41  return result;
+(gdb) s
+42    }
+(gdb) c
+Continuing.
+world is greater than hello
+[Inferior 1 (process 358) exited normally]
+(gdb) 
