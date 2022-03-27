@@ -10,29 +10,29 @@ int input_array(int n,int a[n])
 {
   int i,sum=0;
   for(i=0;i<n;i++)
-{
-  printf("Enter the number:");
-  scanf("%d",&a[i]);
-}
-}
+  {
+    printf("Enter the number:");
+    scanf("%d",&a[i]);
+  }    
+  }
 int sum_n_arrays(int n,int a[n])
 {
   int i,sum=0;
   for(i=0;i<n;i++)
-{
-  sum = sum + a[i];
-}  
+  {
+    sum = sum + a[i];
+  }    
 return sum;
-}
+  }
 void output(int n,int a[n],int sum)
 {
   int i;
   for(i=1;i<n;i++)
-{
-  printf("%d+",i);
-}
-printf("%d is %d",a[n-1],sum);
-}
+  {
+    printf("%d+",i);
+    }
+  printf("%d is %d",a[n-1],sum);
+  }
 int main()
 {
   int i,n,sum,a[i];

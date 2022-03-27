@@ -18,7 +18,7 @@ Reading symbols from a.out...done.
 (gdb) b main
 Breakpoint 1 at 0x894: file p4final.c, line 37.
 (gdb) r
-Starting program: /home/runner/IA1-Revision/a.out 
+Starting program: /home/runner/IA1-Revision-1/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
 Breakpoint 1, main () at p4final.c:37
@@ -32,18 +32,22 @@ Enter the size of the array
 3
 40    a[i] = input_array(n,a);
 (gdb) n
-Enter the number:1
-Enter the number:7
-Enter the number:11
+Enter the number:
+1
+Enter the number:
+7
+Enter the number:
+11
 41    sum = sum_n_arrays(n,a);
-(gdb) s
-sum_n_arrays (n=3, a=0x7fffc5fde890) at p4final.c:20
-20    int i,sum=0;
-(gdb) s
-21    for(i=0;i<n;i++)
-(gdb) s
-23    sum = sum + a[i];
+(gdb) n
+42    output(n,a,sum);
+(gdb) n
+43  }(gdb) n
+__libc_start_main (main=0x55ed6ea0088b <main>, argc=1, argv=0x7ffdc1a48e38, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7ffdc1a48e28) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
 (gdb) c
 Continuing.
-1+2+11 is 19[Inferior 1 (process 497) exited normally]
+1+2+11 is 19[Inferior 1 (process 78) exited normally]
 (gdb) 
