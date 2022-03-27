@@ -1,4 +1,4 @@
- gcc -g p2final.c
+gcc -g p2final.c
  gdb a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
@@ -18,32 +18,70 @@ Reading symbols from a.out...done.
 (gdb) b main
 Breakpoint 1 at 0x84f: file p2final.c, line 26.
 (gdb) r
-Starting program: /home/runner/IA1-Revision/a.out 
+Starting program: /home/runner/IA1-Revision-1/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
 Breakpoint 1, main () at p2final.c:26
-26    a = input();
-(gdb) n
-Enter a number
-4
-27    b = input();
-(gdb) n
-Enter a number
-5
-28    c = input();
-(gdb) n
-Enter a number
-6
-29    largest = cmp(a,b,c);
+26    a=input();
 (gdb) s
-cmp (a=4, b=5, c=6) at p2final.c:12
+input () at p2final.c:3
+3   {
+(gdb) n
+5     printf("Enter a number\n");
+(gdb) n
+Enter a number
+6     scanf("%d",&a);
+(gdb) n
+14
+7     return a;
+(gdb) n
+8   }
+(gdb) s
+main () at p2final.c:27
+27    b=input();
+(gdb) s
+input () at p2final.c:3
+3   {
+(gdb) n
+5     printf("Enter a number\n");
+(gdb) n
+Enter a number
+6     scanf("%d",&a);
+(gdb) n
+17
+7     return a;
+(gdb) n
+8   }
+(gdb) s
+main () at p2final.c:28
+28    c=input();
+(gdb) s
+input () at p2final.c:3
+3   {
+(gdb) n
+5     printf("Enter a number\n");
+(gdb) n
+Enter a number
+6     scanf("%d",&a);
+(gdb) n
+11
+7     return a;
+(gdb) n
+8   }
+(gdb) s
+main () at p2final.c:29
+29    largest=cmp(a,b,c);
+(gdb) s
+cmp (a=14, b=17, c=11) at p2final.c:12
 12    if((a>b)&&(a>c))
 (gdb) s
 14    else if((b>a)&&(b>c))
 (gdb) s
-17    printf("C is big\n");
+15    printf("B is big\n");
+(gdb) n
+B is big
+18  }
 (gdb) c
 Continuing.
-C is big
-[Inferior 1 (process 443) exited normally]
+[Inferior 1 (process 3936) exited normally]
 (gdb) 

@@ -13,8 +13,8 @@ int cmp(int a,int b,int c)
   printf("A is big\n");
   else if((b>a)&&(b>c))
   printf("B is big\n");
-  else
-  printf("C is big\n");
+  else 
+  printf("C is big\n");  
 }
 void output(int a,int b,int c,int largest)
 {
@@ -23,9 +23,9 @@ void output(int a,int b,int c,int largest)
 int main()
 {
   int a,b,c,largest;
-  a = input();
-  b = input();
-  c = input();
-  largest = cmp(a,b,c);
+  a=input();
+  b=input();
+  c=input();
+  largest=cmp(a,b,c);
   return 0;
 }
