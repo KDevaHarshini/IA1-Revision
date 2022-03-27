@@ -18,14 +18,26 @@ Reading symbols from a.out...done.
 (gdb) b main
 Breakpoint 1 at 0x81b: file p3final.c, line 25.
 (gdb) r
-Starting program: /home/runner/IA1-Revision/a.out 
+Starting program: /home/runner/IA1-Revision-1/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
 Breakpoint 1, main () at p3final.c:25
 25    n=input_n();
+(gdb) s
+input_n () at p3final.c:3
+3   {
+(gdb) n
+5     printf("Enter the number :\n");
 (gdb) n
 Enter the number :
+6     scanf("%d",&n);
+(gdb) n
 5
+7     return n;
+(gdb) s
+8   }
+(gdb) n
+main () at p3final.c:26
 26    sum=sum_n(n);
 (gdb) s
 sum_n (n=5) at p3final.c:11
@@ -33,8 +45,43 @@ sum_n (n=5) at p3final.c:11
 (gdb) s
 12    for(i=1; i<=n; i++)
 (gdb) s
-14    sum = sum + i;
+14      sum = sum + i;
+(gdb) s
+12    for(i=1; i<=n; i++)
+(gdb) n
+14      sum = sum + i;
+(gdb) s
+12    for(i=1; i<=n; i++)
+(gdb) s
+14      sum = sum + i;
+(gdb) s
+12    for(i=1; i<=n; i++)
+(gdb) 
+14      sum = sum + i;
+(gdb) s
+12    for(i=1; i<=n; i++)
+(gdb) s
+14      sum = sum + i;
+(gdb) s
+12    for(i=1; i<=n; i++)
+(gdb) s
+16    return sum;
+(gdb) s
+17  }
+(gdb) s
+main () at p3final.c:27
+27    output(sum,n);
+(gdb) s
+output (sum=15, n=5) at p3final.c:20
+20    printf("Sum = %d",sum);
+(gdb) n
+21  }
+(gdb) s
+main () at p3final.c:28
+28    return 0;
+(gdb) n
+29  }
 (gdb) c
 Continuing.
-Sum = 15[Inferior 1 (process 187) exited normally]
+Sum = 15[Inferior 1 (process 5833) exited normally]
 (gdb) 
