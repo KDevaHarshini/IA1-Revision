@@ -19,4 +19,4 @@ int main()
   add(a,b,&sum);
   output(a,b,sum);
   return 0;
-}
+  }  
